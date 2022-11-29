@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!--meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet"-->
+    
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#B12A3A">
+    <link rel="shortcut icon" href="icon/icon-32.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="app.js"></script>
+    <title>Libros</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="manifest" href="manifest.webmanifest">
+    <script src="./js/bootstrap.min.js"></script>
+  </head>
+    
+  <body>
+  
+
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Inicio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Noticias</a>
+          </li>         
+          <li class="nav-item">
+            <a class="nav-link" href="categorias.html">Categorias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="nosotros.html">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li> 
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>Libros</h1>
+      
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio consequuntur numquam reprehenderit. Accusamus illum nulla tempore esse autem ea, nisi placeat unde reiciendis hic cumque sit voluptate error velit consectetur!</p>
+      </div>  
+    </div>
+    <div class="row row-cols-1 row-cols-md-3">
+      <div class="col">
+        <div class="card">
+          <img src="./icon/caroline.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">CAROLINE</h5>
+              <p class="card-text">Cuando por fin consigue abrirla, Coraline se encuentra con un pasadizo secreto que la conduce a otra casa tan parecida a la suya que resulta escalofria...</p>
+              <a href="#" class="btn btn-primary">Leer mas</a>
+          </div>
+        </div>
+      </div> 
+      <div class="col">
+        <div class="card">
+          <img src="./icon/BAJO LA.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">BAJO LA MISMA ESTRELLA</h5>
+              <p class="card-text">La vida de Hazel cambiará cuando conozca a Gus, un chico que como ella, lucha para superar un cáncer.Bestseller #1 de The New York Times en 2012. Rebosa...</p>
+              <a href="#" class="btn btn-primary">Leer mas</a>
+          </div>
+        </div>
+      </div> 
+      <div class="col">
+        <div class="card">
+          <img src="./icon/jardin.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">EL JARDIN DE LAS MARIPOSAS</h5>
+              <p class="card-text">Cerca de una aislada mansión existe un jardín donde se cultivan delicadas flores y en él, abrigada por frondosos árboles, habita una exquisita y peculia...</p>
+              <a href="#" class="btn btn-primary">Leer mas</a>
+          
+            </div>
+        </div>
+      </div> 
+    </div>
+    <div class="card-group" id="libros"></div>
+<div class="row text-center">
+  <div class="col">
+    <br><br><a id="instalar" class="btn btn-danger" href="#">Instalar aplicacion</a>
+    <br><br><a id="InstalarNotificaciones" class="btn btn-danger" href="#">Recibir notificaciones</a>
+  </div>
+</div>
+  
+</div>
+
+<script>
+  let eventoPrompt;
+  window.addEventListener('beforeinstallprompt', function(e){
+    e.preventDefault();
+    eventoPrompt= e;
+  })
+  btnInstallar = document.getElementById("instalar");
+    btnInstallar.addEventListener('click', (e)=>{
+
+    btnInstallar.style.display = 'none';
+    eventoPrompt.prompt();
+    eventoPrompt.userChoice.then((choiceResult)=>{
+      if(choiceResult.outcome==='acepted'){
+        console.log('El usuario instalo la app');
+      }else{
+        console.log('El usuario rechazo la instalacion');
+      }
+      eventoPrompt=null;
+    });
+  });
+  //Notificaciones
+  let botonNotificaciones = document.getElementById('InstalarNotificaciones');
+  botonNotificaciones.addEventListener('click', function(e){
+    Notification.requestPermission().then(function(result){
+      if(result==='granted'){
+        randomNotificacion();
+      }
+    });
+  });
+  function randomNotificacion(){
+    let nTitle = "Libros nuevos";
+    let nBody = "No te pierdas de nuestros increibles libros que tenemos para ti";
+    let nImage = "./icon/BAJO LA.jpg";
+    let options = {
+      body: nBody,
+      icon: nImage
+    }
+    let notif = new Notification(nTitle,options);
+    //setTimeout(randomNotificacion,10000);
+  }
+</script>
+<script src="js/bootstrap.js"></script>
+
+  </body>
+</html>
