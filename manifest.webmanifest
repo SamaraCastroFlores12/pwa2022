@@ -45,7 +45,7 @@
         }
     ],
     "id":"/pwa2022/index.html",
-    "start_url": "/pwa2022/index.html",
+    "start_url": "/index.html",
     "display": "fullscreen",
     "theme_color": "#00aa00",
     "background_color": "#00aa00"

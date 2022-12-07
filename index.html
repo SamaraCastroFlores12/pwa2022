@@ -13,24 +13,22 @@
     <script src="app.js"></script>
     <title>Libros</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link rel="manifest" href="manifest.webmanifest">
     <script src="./js/bootstrap.min.js"></script>
+
   </head>
     
-  <body>
-  
+  <body background="img/libro.jpg" bgcolor="FFCECB">
 
-  <nav class="navbar navbar-dark bg-primary">
+    <nav class="navbar navbar-light" style="background-color: #dc0b8f;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Inicio</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Noticias</a>
-          </li>         
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">        
           <li class="nav-item">
             <a class="nav-link" href="categorias.html">Categorias</a>
           </li>
@@ -52,53 +50,60 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <h1>Libros</h1>
-      
+        <center>
+        <h1 style="color:#ffffff" size="20">Libros</h1>
+      </center>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio consequuntur numquam reprehenderit. Accusamus illum nulla tempore esse autem ea, nisi placeat unde reiciendis hic cumque sit voluptate error velit consectetur!</p>
+        <center>
+        <h4 style="color:#ffffff" >Te presentamos lo mejor de lo mejor las novedades mas recomendadas de este 2022 que vienen historias impresionantes, ingeniosas y entretenidas para disfrutar de la lectura.</h4>
+       </center>
       </div>  
     </div>
+    <br>
+
     <div class="row row-cols-1 row-cols-md-3">
       <div class="col">
         <div class="card">
-          <img src="./icon/caroline.jpg" class="card-img-top" alt="...">
+          <img src="./icon/caroline.jpg" class="card-img-top" alt="..." width="400" height="400">
           <div class="card-body">
             <h5 class="card-title">CAROLINE</h5>
-              <p class="card-text">Cuando por fin consigue abrirla, Coraline se encuentra con un pasadizo secreto que la conduce a otra casa tan parecida a la suya que resulta escalofria...</p>
-              <a href="#" class="btn btn-primary">Leer mas</a>
+              <p class="card-text">Cuando por fin consigue abrirla, Coraline se encuentra con un pasadizo secreto que la conduce a otra casa tan parecida a la suya...</p>
+              <button type="button" class="btn btn-dark">Leer mas</button>
           </div>
         </div>
       </div> 
       <div class="col">
         <div class="card">
-          <img src="./icon/BAJO LA.jpg" class="card-img-top" alt="...">
+          <img src="./icon/BAJO LA.jpg" class="card-img-top" alt="..." width="400" height="400">
           <div class="card-body">
             <h5 class="card-title">BAJO LA MISMA ESTRELLA</h5>
-              <p class="card-text">La vida de Hazel cambiará cuando conozca a Gus, un chico que como ella, lucha para superar un cáncer.Bestseller #1 de The New York Times en 2012. Rebosa...</p>
-              <a href="#" class="btn btn-primary">Leer mas</a>
+              <p class="card-text">La vida de Hazel cambiará cuando conozca a Gus, un chico que como ella, lucha para superar un cáncer.Bestseller #1 de The New...</p>
+              <button type="button" class="btn btn-dark">Leer mas</button>
           </div>
         </div>
       </div> 
       <div class="col">
         <div class="card">
-          <img src="./icon/jardin.jpg" class="card-img-top" alt="...">
+          <img src="./icon/jardin.jpg" class="card-img-top" alt="..." width="400" height="400">
           <div class="card-body">
             <h5 class="card-title">EL JARDIN DE LAS MARIPOSAS</h5>
-              <p class="card-text">Cerca de una aislada mansión existe un jardín donde se cultivan delicadas flores y en él, abrigada por frondosos árboles, habita una exquisita y peculia...</p>
-              <a href="#" class="btn btn-primary">Leer mas</a>
+              <p class="card-text">Cerca de una aislada mansión existe un jardín donde se cultivan delicadas flores y en él, abrigada por frondosos árboles, habita una ...</p>
+              <button type="button" class="btn btn-dark">Leer mas</button>
           
             </div>
         </div>
       </div> 
     </div>
+    
     <div class="card-group" id="libros"></div>
 <div class="row text-center">
   <div class="col">
-    <br><br><a id="instalar" class="btn btn-danger" href="#">Instalar aplicacion</a>
-    <br><br><a id="InstalarNotificaciones" class="btn btn-danger" href="#">Recibir notificaciones</a>
+    
+    <br><br><a id="instalar" class="btn btn-dark"  href="#">Instalar aplicación</a>
+    <br><br><a id="InstalarNotificaciones" class="btn btn-dark" href="#">Recibir notificaciones</a>
   </div>
 </div>
   
